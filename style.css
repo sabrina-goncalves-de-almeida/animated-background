@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: rgb(12, 12, 34);
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #62ffff;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #2681818e, 0 0 50px #2efcfce7, 0 0 100px #00ffff8e;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background-color: #ff62d0;
+    box-shadow: 0 0 0 10px #8126638e, 0 0 50px #fc2eade7, 0 0 100px #ff00aa8e;
+}
+.bubbles span:nth-child(4n+5){
+    background-color: #ffcd62;
+    box-shadow: 0 0 0 10px #814f268e, 0 0 50px #fca32ee7, 0 0 100px #ff88008e;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
